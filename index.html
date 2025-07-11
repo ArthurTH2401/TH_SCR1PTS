@@ -1,16 +1,113 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Sw1ftSync</title>
-<link rel="stylesheet" href="style.css">
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Sw1ftSync Verde Neon - Abas</title>
+<style>
+  body {
+    background-color: #0d1a0f;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #a6f05a;
+    margin: 0;
+    padding: 20px;
+    text-align: center;
+  }
+
+  /* Container das abas */
+  .tabs {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+  }
+
+  /* Botões das abas */
+  .tab-button {
+    background: transparent;
+    border: 2px solid #32ff7e;
+    color: #32ff7e;
+    padding: 12px 30px;
+    margin: 0 8px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    border-radius: 10px;
+    text-transform: uppercase;
+    font-weight: bold;
+    transition: 
+      background-color 0.3s ease, 
+      box-shadow 0.3s ease, 
+      color 0.3s ease;
+    position: relative;
+  }
+
+  /* Neon efeito brilhante */
+  .tab-button:hover,
+  .tab-button.active {
+    background-color: #32ff7e;
+    color: #0d1a0f;
+    box-shadow: 0 0 10px #32ff7e, 0 0 20px #32ff7e, 0 0 40px #32ff7e;
+  }
+
+  /* Conteúdo das abas */
+  .tab-content {
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #143914;
+    border-radius: 12px;
+    box-shadow: 0 0 15px #32ff7e88;
+    text-align: left;
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: #d9f9b1;
+    transition: opacity 0.4s ease;
+  }
+
+  /* Esconde conteúdo inativo */
+  .tab-content:not(.active) {
+    display: none;
+  }
+
+</style>
 </head>
 <body>
-  <div class="container">
-    <h1>Sw1ftSync</h1>
-    <p>Sincronização rápida, fácil e segura</p>
-    <a href="#" class="button">Começar</a>
+
+  <h1>Sw1ftSync - Abas Verde Neon</h1>
+
+  <div class="tabs">
+    <button class="tab-button active" onclick="showTab('executores', this)">Executores</button>
+    <button class="tab-button" onclick="showTab('scripts', this)">Scripts</button>
+    <button class="tab-button" onclick="showTab('sobre', this)">Sobre</button>
   </div>
+
+  <div id="executores" class="tab-content active">
+    <h2>Executores</h2>
+    <p>Aqui você pode colocar os executores do seu site.</p>
+  </div>
+
+  <div id="scripts" class="tab-content">
+    <h2>Scripts</h2>
+    <p>Aqui ficam os scripts disponíveis para download ou visualização.</p>
+  </div>
+
+  <div id="sobre" class="tab-content">
+    <h2>Sobre</h2>
+    <p>Informações sobre o Sw1ftSync, contato e outras informações.</p>
+  </div>
+
+  <script>
+    function showTab(tabId, btn) {
+      // Remove active das abas
+      document.querySelectorAll('.tab-button').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+
+      // Esconde todos os conteúdos
+      document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
+
+      // Mostra o conteúdo selecionado
+      document.getElementById(tabId).classList.add('active');
+    }
+  </script>
+
 </body>
 </html>
