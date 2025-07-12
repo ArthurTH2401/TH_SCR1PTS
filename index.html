@@ -128,10 +128,16 @@
   </nav>
 
   <main>
-    <div id="scripts" class="content-panel">
-      <h2>Scripts</h2>
-      <p>Adicione aqui sua lista de scripts mais recentes.</p>
-    </div>
+   <div id="scripts" class="content-panel">
+  <h2>Scripts</h2>
+  <p>Veja abaixo o script disponível para uso:</p>
+
+  <div style="background:#1c3b21; color:#a6f05a; padding:10px; border-radius:8px; margin-bottom:10px; position:relative;">
+    <code id="script1">loadstring(game:HttpGet(('https://raw.githubusercontent.com/blackowl1231/ZYPHERION/refs/heads/main/main.lua')))()</code>
+    <button onclick="copyScript('script1')" style="position:absolute; top:10px; right:10px; background:#32ff7e; color:#0d1a0f; border:none; padding:4px 8px; border-radius:4px; cursor:pointer;">Copiar</button>
+  </div>
+</div>
+
     <div id="executores" class="content-panel" style="display:none">
       <h2>Executores</h2>
       <p>Adicione aqui os executores atualizados.</p>
